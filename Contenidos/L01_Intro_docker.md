@@ -176,6 +176,8 @@ Para gestionar contenedores emplearemos:
 ```bash
 docker run hello-world
 ```
+
+
     - ¿Cual es el resultado de la ejecución del contenedor *hello-world*?
     - ¿Cual es el tamaño de la imagen descargada?
      

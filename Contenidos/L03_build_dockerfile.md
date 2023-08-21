@@ -23,17 +23,45 @@ El comando `docker build` realiza los siguientes pasos:
 El Dockerfile es un archivo de texto plano que contiene una serie de instrucciones y comandos utilizados por Docker Build para construir una imagen de contenedor. El Dockerfile define los pasos necesarios para configurar el entorno de ejecución de la aplicación dentro del contenedor.
 
 El Dockerfile incluye instrucciones como:
-
-- **FROM:** especifica la imagen base a partir de la cual se construirá la imagen del contenedor.
-- **RUN:** ejecuta comandos en el entorno del contenedor durante el proceso de construcción.
-- **COPY:** copia archivos y directorios desde el contexto de construcción al contenedor.
-- **WORKDIR:** establece el directorio de trabajo dentro del contenedor.
-- **EXPOSE:** especifica los puertos en los que la aplicación dentro del contenedor escucha conexiones.
-- **CMD:** define el comando predeterminado que se ejecutará cuando se inicie el contenedor.
+- **ARG**: permite parametrizar la construcción del contenedor mediante argumentos.
+- **ENV**: permite especificar variables de entorno.
+- **FROM**: especifica la imagen base a partir de la cual se construirá la imagen del contenedor.
+- **RUN**: ejecuta comandos en el entorno del contenedor durante el proceso de construcción.
+- **COPY**: copia archivos y directorios desde el contexto de construcción al contenedor.
+- **WORKDIR**: establece el directorio de trabajo dentro del contenedor.
+- **VOLUME**: permite definiir un volumen para el almacenamiento de datos de forma persistente.
+- **EXPOSE**: especifica los puertos en los que la aplicación dentro del contenedor escucha conexiones.
+- **CMD**: define el comando predeterminado que se ejecutará cuando se inicie el contenedor.
 
 El Dockerfile permite definir de manera reproducible y automatizada la configuración y los pasos necesarios para construir una imagen de contenedor. Se puede utilizar para personalizar y ajustar la configuración del contenedor según las necesidades específicas de la aplicación.
 
-### Ejemplo de *Dockerfile*
+### Ejemplos de *Dockerfile*
+**Ejemplo 1:**
+```dockerfile
+# Commentarios
+ARG VERSION=latest # Los argumentos permiten parametrizar la construcción del contenedor.
+FROM busybox:${VERSION:-latest}
+WORKDIR /home # Directorio de trabajo del contenedor.
+VOLUME /home
+RUN echo "Hola Mundo $VERSION!" > imagen_version
+```
+Podemos construir una imagen a partir del *dockerfile* del *Ejemplo1* con los siguientes comandos: 
+- Podemos indicar el valor de los argumentos (ARG) a través de la línea de omandos.
+```bash
+$ docker build --build-arg VERSION=1.33.1 -t ejemplo1 .
+```
+- O simplemente ejecutar el comando sin más.
+```bash
+$ docker build -t ejemplo1 .
+```
+Para lanzar la ejecución de un contenedor a partir de esta imagen empleamos:
+```sh
+$ docker run -it ejemplo1
+/home # ls
+/home # cat imagen_version
+```
+
+**Ejemplo 2:**
 ```dockerfile
 FROM ubuntu:latest # Imagen básica del SO Linux del contenedor
 
@@ -50,6 +78,11 @@ CMD ["app.py"]
 
 En resumen, Docker Build es el comando que ejecuta las instrucciones definidas en un Dockerfile para construir una imagen de contenedor. El Dockerfile es el archivo de configuración que contiene las instrucciones y comandos necesarios para construir la imagen. Juntos, Docker Build y Dockerfile permiten construir imágenes de contenedores personalizadas y reproducibles de manera eficiente.
 
+### Vídeos:
+En los siguientes vídeos se explica como realizar la configuración de una imagen con un Dockerfile:
+- [Docker crear Dockerfile](https://www.youtube.com/watch?v=6xWw-LKhz9s)
+- [Cómo crear nuestras propias imagenes en Docker](https://youtu.be/74nenVi_W0o)
+- [Dockerfile Tutorial - Docker in Practice](https://youtu.be/WmcdMiyqfZs)
 
 ## Flask
 Flask es un framework web ligero y flexible escrito en Python. Es utilizado para construir aplicaciones web rápidas y eficientes. Flask se basa en el concepto de "microframework", lo que significa que proporciona solo las funcionalidades básicas necesarias para construir aplicaciones web, pero es altamente extensible y permite agregar funcionalidades adicionales según sea necesario.

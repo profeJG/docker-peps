@@ -10,9 +10,10 @@
 5. Comandos más habituales para la gestión de contenedores.
 
 ## 1. ¿Qué es Docker?
-**Docker** es un software de código abierto utilizado para desplegar aplicaciones dentro de contenedores virtuales. La contenerización permite que varias aplicaciones funcionen en diferentes entornos complejos. Por ejemplo, Docker permite ejecutar el sistema de gestión de contenidos WordPress en sistemas Windows, Linux y macOS sin ningún problema. 
+**[Docker](https://www.docker.com/)** es un software de código abierto utilizado para desplegar aplicaciones dentro de contenedores virtuales. La contenerización permite que varias aplicaciones funcionen en diferentes entornos complejos. Por ejemplo, Docker permite ejecutar el sistema de gestión de contenidos WordPress en sistemas Windows, Linux y macOS sin ningún problema. 
 
-Docker es una tecnología de organización en contenedores que posibilita la creación y el uso de los contenedores de Linux. 
+Docker es una tecnología de organización en contenedores que posibilita la creación y el uso de los contenedores de Linux.
+![Logotipo de Docker(R)](https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png) 
 
 Docker es un proyecto de código abierto para automatizar la implementación de aplicaciones como contenedores portátiles y autosuficientes que se pueden ejecutar en la nube o localmente. Docker es también una empresa que promueve e impulsa esta tecnología, en colaboración con proveedores de la nube, Linux y Windows, incluido Microsoft.
 
@@ -40,10 +41,110 @@ Las principales características clave que ofrece Docker son:
 - **Seguro:** Docker proporciona un entorno seguro para las aplicaciones al aislarlas en contenedores individuales. Cada contenedor tiene su propio sistema de archivos y recursos, lo que evita que las aplicaciones interfieran entre sí. Además, Docker ofrece características de seguridad adicionales, como la autenticación y el control de acceso, para proteger los contenedores y los datos que contienen.
 
 ## 4. Componentes de Docker
+A continuación, se muestra un diagrama de los componentes principales de Docker
+![Componentes principales de Docker](../imagenes/L01_Componentes_Docker.png)
+Los componentes principales de Docker son: Cliente, Motor y Registro.
+Estos tres componentes trabajan en conjunto para permitir la creación, ejecución y distribución de contenedores con Docker. El cliente de Docker envía comandos al motor de Docker, que a su vez se encarga de gestionar los contenedores y acceder al registro de Docker para obtener las imágenes necesarias.
+
+### Cliente de Docker
+Es la interfaz de línea de comandos (CLI) que permite a los usuarios interactuar con el entorno de Docker. El cliente de Docker se comunica con el motor de Docker para ejecutar comandos y administrar contenedores, imágenes y volúmenes.
+
+### Motor de Docker (*Docker Engine*)
+Es el componente central de Docker que ejecuta y gestiona los contenedores. El motor de Docker se encarga de construir, ejecutar y distribuir los contenedores. También administra los recursos del sistema, como la memoria y la CPU, para garantizar un rendimiento óptimo de los contenedores.
+
+Las imágenes y los contenedores son dos conceptos fundamentales en Docker:
+
+#### Contenedores
+Un contenedor de Docker es una instancia en ejecución de una imagen de Docker. Los contenedores se crean a partir de imágenes y contienen todo lo necesario para ejecutar una aplicación de forma aislada, incluyendo el sistema operativo, las bibliotecas y las configuraciones necesarias. Cada contenedor se ejecuta de manera independiente y aísla los procesos y recursos del sistema del host y de otros contenedores. Los contenedores son livianos, portátiles y escalables, y pueden ser fácilmente iniciados, detenidos, reiniciados y eliminados.
+
+
+#### Imágenes
+Una imagen de Docker es una plantilla o un archivo de solo lectura que contiene todo lo necesario para ejecutar una aplicación, incluyendo el código, las bibliotecas, las dependencias, las variables de entorno y cualquier otro archivo o configuración necesarios. Las imágenes se construyen a partir de un archivo de configuración llamado Dockerfile, que especifica las instrucciones para construir la imagen. Las imágenes se pueden considerar como una instantánea del estado de una aplicación en un momento dado.
+
+### Registro
+Es un repositorio centralizado donde se almacenan las imágenes de Docker. El registro de Docker permite a los usuarios compartir y distribuir imágenes de contenedores. Docker Hub es el registro de Docker público más conocido, pero también se pueden utilizar registros privados para almacenar imágenes personalizadas.
+
+Algunos ejemplos de registros de Docker son:
+
+- **[Docker Hub:](https://hub.docker.com/)** Es el registro de Docker público más conocido y utilizado. Proporciona una amplia variedad de imágenes de contenedores, tanto oficiales como de la comunidad. Docker Hub permite a los usuarios subir, descargar y compartir imágenes de contenedores de forma gratuita.
+- **[Amazon Elastic Container Registry (ECR):](https://aws.amazon.com/es/ecr/)** Es un servicio de registro de Docker proporcionado por Amazon Web Services (AWS). ECR permite a los usuarios almacenar, administrar y desplegar imágenes de contenedores en la nube de AWS. Es altamente escalable y se integra bien con otros servicios de AWS, como Amazon ECS y Amazon EKS.
+- **[Google Container Registry (GCR):](https://cloud.google.com/artifact-registry?hl=es)** Es un registro de Docker proporcionado por Google Cloud Platform (GCP). GCR permite a los usuarios almacenar y administrar imágenes de contenedores en la nube de GCP. También se integra con otras herramientas y servicios de GCP, como Google Kubernetes Engine (GKE).
+- **[Azure Container Registry (ACR):](https://azure.microsoft.com/es-es/products/container-registry)** Es un servicio de registro de Docker proporcionado por Microsoft Azure. ACR permite a los usuarios almacenar y administrar imágenes de contenedores en la nube de Azure. Se integra con otros servicios de Azure, como Azure Kubernetes Service (AKS) y Azure Container Instances.
+
+Estos son solo algunos ejemplos de registros de Docker populares, pero también es posible configurar y utilizar registros privados para almacenar y compartir imágenes de contenedores personalizadas.
+
 ## 5. Caso práctico: Instalando Docker
+Para instalar Docker, sigue estos pasos:
+
+1. **Comprueba los requisitos del sistema:** Antes de instalar Docker, asegúrate de que tu sistema cumpla con los requisitos mínimos. Docker es compatible con una variedad de sistemas operativos, incluyendo Linux, Windows y macOS. Verifica que tu sistema cumpla con los requisitos de hardware y software necesarios para la instalación de Docker.
+
+2. **Descarga Docker:** Visita el [sitio web oficial de Docker](https://www.docker.com/) y descarga la versión adecuada para tu sistema operativo. Asegúrate de descargar la versión estable y recomendada de Docker.
+
+3. **Instala Docker:** Una vez que hayas descargado el archivo de instalación de Docker, ejecútalo y sigue las instrucciones del asistente de instalación. Durante la instalación, se te puede pedir que aceptes los términos y condiciones de uso, así como proporcionar permisos de administrador.
+
+4. **Inicia Docker:** Una vez completada la instalación, inicia Docker desde el menú de aplicaciones o desde la línea de comandos. En algunos sistemas operativos, Docker se iniciará automáticamente después de la instalación.
+
+5. **Verifica la instalación:** Para asegurarte de que Docker se ha instalado correctamente, abre una ventana de terminal o línea de comandos y ejecuta el comando `docker version`. Esto mostrará la versión de Docker instalada y confirmará que la instalación se ha realizado correctamente.
+
+### Instalación de Docker en Ubuntu / Linux Mint
+Para instalar Docker en Ubuntu, puedes seguir los siguientes pasos:
+
+1. Actualiza el índice de paquetes de Ubuntu:
+
+```
+sudo apt update
+```
+
+2. Instala algunos paquetes de requisitos previos que permiten a apt usar paquetes a través de HTTPS:
+
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+
+3. Agrega la clave GPG oficial de Docker:
+
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+4. Configura el repositorio estable de Docker:
+
+```
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+5. Actualiza el índice de paquetes nuevamente:
+
+```
+sudo apt update
+```
+
+6. Instala Docker Engine:
+
+```
+sudo apt install docker-ce docker-ce-cli containerd.io
+```
+
+7. Verifica que Docker se haya instalado correctamente ejecutando el siguiente comando:
+
+```
+sudo docker run hello-world
+```
+
+Si ves un mensaje que indica "Hello from Docker!", significa que Docker se ha instalado correctamente en tu sistema.
+
+
+Una vez Docker está instalado en el sistema y estás podemos comenzar a utilizarlo para crear, ejecutar y administrar contenedores.
 ## 6. Comandos más habituales para la gestión de contenedores
 
 ## Referencias:
+- [Docker: Accelerated Container Application Development](https://www.docker.com/)
 - [¿Qué es Docker y cómo funciona? - Red Hat.](https://www.redhat.com/es/topics/containers/what-is-docker)
 - [Los beneficios de utilizar Docker y contenedores a la hora de programar.](https://www.campusmvp.es/recursos/post/)
+- [Arquitectura Docker y sus componentes principales para principiantes.](https://geekflare.com/es/docker-architecture/)]
+- [Docker Hub: *Build, Ship and Run, any app anywhere*.](https://hub.docker.com/)
+- [Documentación oficial de Docker para la instalación en Ubuntu.](https://docs.docker.com/engine/install/ubuntu/)
+- [Guía de DigitalOcean para instalar Docker en Ubuntu.](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es)
+
+
 

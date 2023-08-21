@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sleep 3
-if curl web:5000 | grep -q 'Hola Openwebinars!'; then
+if curl web:5000 | grep -q 'Hola Mundo Docker!'; then
   echo "Tests passed!"
   exit 0
 else

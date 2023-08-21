@@ -41,8 +41,9 @@ Las principales características clave que ofrece Docker son:
 - **Seguro:** Docker proporciona un entorno seguro para las aplicaciones al aislarlas en contenedores individuales. Cada contenedor tiene su propio sistema de archivos y recursos, lo que evita que las aplicaciones interfieran entre sí. Además, Docker ofrece características de seguridad adicionales, como la autenticación y el control de acceso, para proteger los contenedores y los datos que contienen.
 
 ## 4. Componentes de Docker
-A continuación, se muestra un diagrama de los componentes principales de Docker
+A continuación, se muestra un diagrama de los componentes principales de Docker.
 ![Componentes principales de Docker](../imagenes/L01_Componentes_Docker.png)
+
 Los componentes principales de Docker son: Cliente, Motor y Registro.
 Estos tres componentes trabajan en conjunto para permitir la creación, ejecución y distribución de contenedores con Docker. El cliente de Docker envía comandos al motor de Docker, que a su vez se encarga de gestionar los contenedores y acceder al registro de Docker para obtener las imágenes necesarias.
 
@@ -130,13 +131,54 @@ sudo apt install docker-ce docker-ce-cli containerd.io
 ```
 sudo docker run hello-world
 ```
-
 Si ves un mensaje que indica "Hello from Docker!", significa que Docker se ha instalado correctamente en tu sistema.
 
-
 Una vez Docker está instalado en el sistema y estás podemos comenzar a utilizarlo para crear, ejecutar y administrar contenedores.
-## 6. Comandos más habituales para la gestión de contenedores
 
+## 6. Comandos más habituales para la gestión de contenedores
+El comando básico para obtener infromación dellada de los comandos de Docker es `docker --help`.
+
+Para gestionar contenedores emplearemos:
+**Uso:** `docker container COMANDO`
+**Comandos:**
+  - `attach`: Adjuntar flujos locales de entrada, salida y error estándar a un contenedor en ejecución.
+  - `commit`: Crear una nueva imagen a partir de los cambios de un contenedor.
+  - `cp`: Copiar archivos/carpetas entre un contenedor y el sistema de archivos local.
+  - `create`: Crear un nuevo contenedor.
+  - `diff`: Inspeccionar cambios en archivos o directorios en el sistema de archivos de un contenedor.
+  - `exec`: Ejecutar un comando en un contenedor en ejecución.
+  - `export`: Exportar el sistema de ficheros de un contenedor como archivo *tar*.
+  - `inspect`: Mostrar información detallada sobre uno o más contenedores.
+  - `kill`: Matar uno o más contenedores en ejecución.
+  - `logs`: Obtener los registros de un contenedor.
+  - `ls`: Listar contenedores.
+  - `pause`: Pausa todos los procesos de uno o más contenedores.
+  - `port`: Lista las asignaciones de puertos o una asignación específica para el contenedor
+  - `prune`: Elimina todos los contenedores detenidos.
+  - `rename`: Renombra un contenedor.
+  - `restart`: Reinicia uno o más contenedores.
+  - `rm`: Eliminar uno o más contenedores.
+  - `run`:` Crear y ejecutar un nuevo contenedor desde una imagen.
+  - `start`: Iniciar uno o más contenedores parados.
+  - `stats`: Mostrar en tiempo real las estadísticas de uso de recursos de los contenedores.
+  - `stop`: Detener uno o más contenedores en ejecución.
+  - `top`: Mostrar los procesos en ejecución de un contenedor.
+  - `unpause`: Desactivar todos los procesos de uno o más contenedores.
+  - `update`: Actualizar la configuración de uno o más contenedores.
+  - `wait`: Bloquear hasta que uno o más contenedores se detengan.
+
+## Ejercicios propuestos:
+1. Explique resumidamente qué es Docker.
+2. ¿Cual es la diferencia entre Docker y una máquina virtual?
+3. Averigue cual es la versión de Docker que tiene instalada en su sistema operativo.
+4. ¿Cuál es la diferencia entre *Docker Server Engine* y *Docker Client Engine*?
+5. Ejecute los siguientes comandos:
+```bash
+docker run hello-world
+```
+    - ¿Cual es el resultado de la ejecución del contenedor *hello-world*?
+    - ¿Cual es el tamaño de la imagen descargada?
+     
 ## Referencias:
 - [Docker: Accelerated Container Application Development](https://www.docker.com/)
 - [¿Qué es Docker y cómo funciona? - Red Hat.](https://www.redhat.com/es/topics/containers/what-is-docker)
@@ -145,6 +187,3 @@ Una vez Docker está instalado en el sistema y estás podemos comenzar a utiliza
 - [Docker Hub: *Build, Ship and Run, any app anywhere*.](https://hub.docker.com/)
 - [Documentación oficial de Docker para la instalación en Ubuntu.](https://docs.docker.com/engine/install/ubuntu/)
 - [Guía de DigitalOcean para instalar Docker en Ubuntu.](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es)
-
-
-

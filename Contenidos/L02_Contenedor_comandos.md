@@ -53,9 +53,29 @@ docker push josegasparsanch2/ubuntu-python:v1.0
 ```sh
 docker run -it -v ${PWD}/my-python-app:/app -w /app josegasparsanch2/ubuntu-python:v1.0 pytest
 ```
+### Dockerfile
+Podemos obtener una imagen automatizada, similar a la obtenida mediante los comandos anteriores, empleando *Dockerfile* y los siguientes comandos:
+1. En primer lugar nos situamos en el directorio *my-python-app* y construimos el [Dockerfile](../my-python-app/Dockerfile):
+```dockerfile
+FROM ubuntu:latest
 
+RUN apt update && apt install -y \
+python3 \
+pip
 
-
+WORKDIR /app
+COPY . /app/
+RUN pip install -r requierements.txt
+ENTRYPOINT ["pytest"]
+```
+2. A continuación, construimos la *imagen my-ubuntu-python*.
+```bash
+docker build -t my-ubuntu-python .
+```
+3. Por último, ejecutamos un contenedor a partir de la imagen construida.
+```sh
+docker run -it my-ubuntu-python pytest
+```
 
 ## Vídeos:
 - [Ejecutar comandos dentro de un contenedor Docker con `docker run](https://youtu.be/3zxWWRmOdug)

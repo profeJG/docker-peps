@@ -7,6 +7,6 @@ Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso d
 2. Arquitecturas de microservicios.
 3. [Construcción de imagenes: `docker build` y  *Dockerfile*.](Contenidos/L03_build_dockerfile.md)
 4. Desarrollo de contenedores: `docker-compose`.
-5. Integración continua.
+5. [Integración continua.](Contenidos/L05_Integración_Continua.md)
 6. Docker en producción.
 ## Referencias:

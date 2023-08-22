@@ -45,6 +45,16 @@ pip install -r requierements.txt
 ```bash
 docker commit -m "Entorno de desrrollo Python sobre Ubuntu" -a "José Gaspar Sánchez García <jg.sanchezgarcia@edu.gva.es>" jg-ubuntu-python josegasparsanch2/ubuntu-python:v1.0
 ```
+9. Por último, podemos subir al registro DockerHub la imagen que acabamos de personalizar.
+```sh
+docker push josegasparsanch2/ubuntu-python:v1.0
+```
+10. La ejecución de los *tests* de esta imagen la conseguiriamos del siguiete modo
+```sh
+docker run -it -v ${PWD}/my-python-app:/app -w /app josegasparsanch2/ubuntu-python:v1.0 pytest
+```
+
+
 
 
 ## Vídeos:

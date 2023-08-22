@@ -17,7 +17,7 @@ docker images
 ```
 3. Creamos una carpeta *my-python-app* donde almacenaremos los ficheros que deseamos compartir con el contenedor.
 ```bash
-mkdir -p my-python-app/test
+mkdir -p my-python-app/tests
 ```
 4. En el interior de la carpeta *my-python-app* creamos un fichero llamado *[requierements.txt](../my-python-app/requierements.txt)* que contendrá las librerias Python que deseamos instalar en el entorno. En el insterior de esta carpeta situaremos los ficheros de código Python (sanple.py) y test (test_sample.py).
 ```bash

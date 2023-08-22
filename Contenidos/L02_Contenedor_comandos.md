@@ -31,7 +31,7 @@ cd ..
 
 5. Ejecutamos un contenedor Docker a partir de la imagen de Ubuntu descargada.
 ```bash
-docker run -it --name ubuntu-python -v ${PWD}/my-python-app:/app -w /app ubuntu
+docker run -it --name jg-ubuntu-python -v ${PWD}/my-python-app:/app -w /app ubuntu
 ```
 6. Una vez iniciado el terminal interactivo del contenedor, procederemos a instalar Python.
 ```sh
@@ -43,7 +43,7 @@ pip install -r requierements.txt
 ```
 8. Una vez realizadas las modificaciones sobre el contenedor podemos confirmar estas en una nueva imagen.
 ```bash
-docker commit -m "Entorno de desrrollo Python sobre Ubuntu" -a "José Gaspar Sánchez García <jg.sanchezgarcia@edu.gva.es>" jg-ubuntu-python ubuntu-python
+docker commit -m "Entorno de desrrollo Python sobre Ubuntu" -a "José Gaspar Sánchez García <jg.sanchezgarcia@edu.gva.es>" jg-ubuntu-python josegasparsanch2/ubuntu-python:v1.0
 ```
 
 

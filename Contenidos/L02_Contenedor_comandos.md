@@ -39,8 +39,11 @@ apt update && apt install -y python3 pip
 ```
 7. Seguidamente instalaremos las librerías del lenguaje.
 ```sh
-
 pip install -r requierements.txt
+```
+8. Una vez realizadas las modificaciones sobre el contenedor podemos confirmar estas en una nueva imagen.
+```bash
+docker commit -m "Entorno de desrrollo Python sobre Ubuntu" -a "José Gaspar Sánchez García <jg.sanchezgarcia@edu.gva.es>" jg-ubuntu-python ubuntu-python
 ```
 
 
@@ -53,3 +56,4 @@ pip install -r requierements.txt
 - [Pytest: helps you write better programs.](https://docs.pytest.org/en/7.4.x/)
 - [Pylint.](https://pypi.org/project/pylint/)
 - [Tutorial de Pytest.](https://misovirtual.virtual.uniandes.edu.co/codelabs/tutorial-PyTest/index.html?index=..%2F..index#0)
+- [Documentación Oficial Docker: docker commit.](https://docs.docker.com/engine/reference/commandline/commit/)

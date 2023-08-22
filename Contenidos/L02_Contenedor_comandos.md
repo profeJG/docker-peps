@@ -17,9 +17,9 @@ $ docker images
 ```
 3. Creamos una carpeta *my-python-app* donde almacenaremos los ficheros que deseamos compartir con el contenedor.
 ```bash
-$ mkdir my-python-app
+$ mkdir -p my-python-app/test
 ```
-4. En el interior de la carpeta *my-python-app* creamos un fichero llamado *requierements.txt* que contendrá las librerias Python que deseamos instalar en el entorno.
+4. En el interior de la carpeta *my-python-app* creamos un fichero llamado *[requierements.txt](../my-python-app/requierements.txt)* que contendrá las librerias Python que deseamos instalar en el entorno. En el insterior de esta carpeta situaremos los ficheros de código Python (sanple.py) y test (test_sample.py).
 ```bash
 $ cd my-python-app
 $ nano requierements.txt
@@ -50,5 +50,5 @@ pip install -r requierements.txt
 ## Referencias:
 - [Ejecutar comandos dentro de un contenedor Docker con `docker run`.](https://geekytheory.com/curso-docker-ejecutar-comandos-dentro-contenedor-docker-run/)
 - [Pytest: helps you write better programs.](https://docs.pytest.org/en/7.4.x/)
-- [Pylint.]()https://pypi.org/project/pylint/
+- [Pylint.](https://pypi.org/project/pylint/)
 - [Tutorial de Pytest.](https://misovirtual.virtual.uniandes.edu.co/codelabs/tutorial-PyTest/index.html?index=..%2F..index#0)

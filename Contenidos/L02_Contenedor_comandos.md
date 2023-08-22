@@ -49,3 +49,6 @@ pip install -r requierements.txt
 
 ## Referencias:
 - [Ejecutar comandos dentro de un contenedor Docker con `docker run`.](https://geekytheory.com/curso-docker-ejecutar-comandos-dentro-contenedor-docker-run/)
+- [Pytest: helps you write better programs.](https://docs.pytest.org/en/7.4.x/)
+- [Pylint.]()https://pypi.org/project/pylint/
+- [Tutorial de Pytest.](https://misovirtual.virtual.uniandes.edu.co/codelabs/tutorial-PyTest/index.html?index=..%2F..index#0)

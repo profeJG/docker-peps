@@ -74,7 +74,7 @@ docker build -t my-ubuntu-python .
 ```
 3. Por último, ejecutamos un contenedor a partir de la imagen construida.
 ```sh
-docker run -it my-ubuntu-python pytest
+docker run -it my-ubuntu-python
 ```
 
 ## Vídeos:

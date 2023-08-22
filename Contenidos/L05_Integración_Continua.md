@@ -23,5 +23,20 @@ A continuación, se proporciona una explicación detallada de algunas de las her
 5. **[Circle CI](https://circleci.com/)**: Circle CI es una plataforma de integración continua basada en la nube que permite a los desarrolladores automatizar el proceso de construcción, prueba y despliegue de aplicaciones. Circle CI es altamente escalable y se integra con una amplia variedad de herramientas y servicios populares.
 
 Estas son solo algunas de las herramientas más populares de integración continua disponibles en el mercado. Cada una tiene sus propias características y ventajas, por lo que es importante evaluar las necesidades y requisitos específicos de su proyecto antes de elegir una herramienta de integración continua.
+
 ## 3. Integración Continua con Docker
+Docker es una plataforma de virtualización a nivel de sistema operativo que permite empaquetar aplicaciones y sus dependencias en contenedores. Docker puede desempeñar un papel importante en la integración continua al proporcionar un entorno de desarrollo y prueba consistente y reproducible. A continuación, se detallan algunas formas en que Docker puede ayudar en la integración continua:
+
+1. Entorno de desarrollo consistente: Docker permite empaquetar una aplicación y todas sus dependencias en un contenedor. Esto significa que el entorno de desarrollo utilizado para construir y probar la aplicación es consistente en todos los pasos del proceso de integración continua. Esto ayuda a evitar problemas de incompatibilidad entre el entorno de desarrollo de los desarrolladores y el entorno de prueba.
+
+2. Reproducibilidad: Al empaquetar una aplicación en un contenedor Docker, se puede garantizar que la misma versión de la aplicación y sus dependencias se utilicen en todas las etapas del proceso de integración continua. Esto permite una mayor reproducibilidad de las pruebas y facilita la detección de errores y problemas.
+
+3. Aislamiento: Docker proporciona aislamiento entre los diferentes componentes de una aplicación. Esto significa que cada parte de la aplicación se puede empaquetar en un contenedor separado, lo que facilita la prueba y el despliegue de cada componente de forma independiente. Esto permite una mayor flexibilidad y agilidad en el proceso de integración continua.
+
+4. Escalabilidad: Docker facilita la creación de entornos de prueba escalables. Los contenedores Docker se pueden crear y destruir rápidamente, lo que permite ejecutar pruebas en paralelo y acelerar el proceso de integración continua.
+
+5. Integración con herramientas de integración continua: Docker se puede integrar fácilmente con herramientas de integración continua como Jenkins, Bamboo, Travis CI, Circle CI, entre otras. Estas herramientas pueden utilizar contenedores Docker para construir, probar y desplegar aplicaciones de manera automatizada.
+
+En resumen, Docker puede ayudar en la integración continua al proporcionar un entorno de desarrollo consistente, reproducible y aislado. Esto facilita la detección temprana de errores, acelera el proceso de integración continua y mejora la calidad del software.
+
 ## Referencias:

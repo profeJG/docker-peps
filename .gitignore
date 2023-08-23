@@ -1,2 +1,4 @@
 # Ficheros temporales
 *.tmp
+# Excluir directorios
+wordpress/var/

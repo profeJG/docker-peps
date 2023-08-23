@@ -18,9 +18,7 @@ Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso d
 - [Tema 1 - Docker](https://16khs695mehu6grk1ykq.institutomilitar.com/Docker%20-%20Tema%201.pdf)
 - [Tema 2 - Docker Compose](https://16khs695mehu6grk1ykq.institutomilitar.com/Docker%20-%20Tema%202%20docker-compose.pdf)
 - [Tema 3 - Kubernetes](https://16khs695mehu6grk1ykq.institutomilitar.com/Docker%20-%20Tema%203%20Kubernetes.pdf)
-  
-- [Código URJC: Curso Docker](https://github.com/codeurjc/curso-docker)
-- 
+- [Código URJC: Curso Docker](https://github.com/codeurjc/curso-docker) 
 
 ## Vídeos
 - [Webinars Docker - URJC](https://www.youtube.com/watch?v=p7IQB5CfG4w&list=PL_4GjXD29UlvSTReD31Od0fJzC3qHQckE)

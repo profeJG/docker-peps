@@ -6,6 +6,7 @@
 
 
 Docker Build y Dockerfile son dos componentes clave en el proceso de construcción de imágenes de contenedores personalizadas en Docker. A continuación, se explica el funcionamiento de cada uno:
+![Dockerfile](../imagenes/L02_dockerfile.png)
 
 ## 1. Docker build
 **Docker Build** es el comando utilizado para construir una imagen de contenedor a partir de un Dockerfile y otros recursos necesarios. Este comando toma como entrada un contexto de construcción, que es un directorio local que contiene el Dockerfile y cualquier otro archivo requerido por la aplicación. Docker Build ejecuta las instrucciones definidas en el Dockerfile y crea una nueva imagen de contenedor basada en esas instrucciones.

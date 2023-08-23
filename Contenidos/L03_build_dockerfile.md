@@ -3,6 +3,7 @@
 ## Contenidos:
 1. Docker build.
 2. Dockerfile.
+3. Optimización de Dockerfile.
 
 
 Docker Build y Dockerfile son dos componentes clave en el proceso de construcción de imágenes de contenedores personalizadas en Docker. A continuación, se explica el funcionamiento de cada uno:
@@ -78,6 +79,112 @@ CMD ["app.py"]
 ```
 
 En resumen, Docker Build es el comando que ejecuta las instrucciones definidas en un Dockerfile para construir una imagen de contenedor. El Dockerfile es el archivo de configuración que contiene las instrucciones y comandos necesarios para construir la imagen. Juntos, Docker Build y Dockerfile permiten construir imágenes de contenedores personalizadas y reproducibles de manera eficiente.
+
+## 3. Optimización del Dockerfile
+
+Estas son algunas de las buenas prácticas y técnicas de optimización que se pueden aplicar a  **Dockerfile**:
+1. Uso de `.dockerignore`.
+2. Reducción del tamaño de los contenedores.
+3. Minimización del número de layers.
+4. Optimización del uso de la caché.
+5. Parametrización empleando argumentos (ARG).
+6. Multi-stage build.
+
+
+Ejemplo:
+```Dockerfile
+# Etapa de compilación
+FROM golang:1.16 AS build
+
+# Copiar el código fuente
+WORKDIR /app
+COPY . .
+
+# Compilar la aplicación
+RUN go build -o myapp
+
+# Etapa de producción
+FROM alpine:3.14 AS production
+
+# Copiar solo los archivos necesarios desde la etapa de compilación
+COPY --from=build /app/myapp /usr/local/bin/myapp
+
+# Configurar variables de entorno
+ARG ENVIRONMENT=production
+ENV ENVIRONMENT=$ENVIRONMENT
+
+# Instalar dependencias adicionales si es necesario
+RUN apk add --no-cache curl
+
+# Ejecutar la aplicación
+CMD ["myapp"]
+```
+
+En este ejemplo, hemos utilizado una etapa de compilación para compilar nuestra aplicación Go y una etapa de producción para crear la imagen final del contenedor. Aquí hay una explicación de cómo se aplican las optimizaciones y buenas prácticas:
+
+- Hemos utilizado una imagen base específica y liviana para cada etapa: `golang:1.16` para la etapa de compilación y `alpine:3.14` para la etapa de producción.
+- Hemos copiado solo los archivos necesarios desde la etapa de compilación a la etapa de producción utilizando la instrucción `COPY --from=build`.
+- Hemos utilizado argumentos (`ARG`) para parametrizar la variable de entorno `ENVIRONMENT`, lo que nos permite configurar su valor durante la construcción de la imagen.
+- Hemos utilizado la instrucción `RUN` para instalar dependencias adicionales si es necesario, y luego hemos eliminado la caché de paquetes (`--no-cache`) para reducir el tamaño final de la imagen.
+- Hemos utilizado la instrucción `CMD` para especificar el comando predeterminado que se ejecutará cuando se inicie el contenedor.
+
+
+### 3.1. Uso de `.dockerignore`
+El archivo `.dockerignore` permite especificar patrones de archivos y directorios que Docker debe omitir al construir la imagen. Esto es útil para evitar incluir archivos innecesarios en la imagen, lo que puede reducir el tamaño final del contenedor y acelerar el proceso de construcción.
+
+Ejemplo fichero `.dockerignore`
+
+``` .dockerignore
+# Ignorar archivos y directorios específicos
+node_modules
+.git
+.env
+
+# Ignorar archivos con cierta extensión
+*.log
+*.tmp
+
+# Ignorar todos los archivos en un directorio específico
+logs/*
+```
+
+### 3.2. Reducción del tamaño de los contenedores
+   - **Utiliza imágenes base más pequeñas**: Elige imágenes base que sean lo más pequeñas posible y que contengan solo los componentes necesarios para tu aplicación.
+   - **Minimiza los paquetes y dependencias**: Instala solo los paquetes y dependencias necesarios para que tu aplicación funcione correctamente.
+   - **Limpia los archivos temporales**: Elimina los archivos temporales y los paquetes de instalación después de que se hayan utilizado en el Dockerfile.
+   - **Utiliza volúmenes para datos persistentes**: Evita almacenar datos persistentes dentro del contenedor y utiliza volúmenes de Docker para almacenarlos fuera del contenedor.
+
+### 3.3. Minimización del número de layers
+   - **Combina instrucciones RUN:** Agrupa varias instrucciones RUN en una sola para reducir el número de capas generadas. Por ejemplo, en lugar de ejecutar varios comandos RUN para instalar paquetes, puedes combinarlos en uno solo.
+   - **Utiliza instrucciones COPY y ADD en una sola línea:** En lugar de copiar o agregar archivos uno por uno, puedes utilizar una sola instrucción COPY o ADD con comodines para copiar varios archivos en una sola capa.
+
+##### Ejemplo combinación intrucciones RUN:
+##### Varias instrucciones RUN
+```dockerfile
+RUN apt-get update
+RUN apt-get install -y python-pip python-dev build-essential
+```
+##### Instrucciones RUN combinadas
+```dockerfile
+RUN apt-get update && apt-get install -y \
+python-pip \
+python-dev build-essential && apt clean
+```
+
+### 3.4. Optimización del uso de la caché
+   - **Ordena las instrucciones en el *Dockerfile***: Coloca las instrucciones que cambian con mayor frecuencia al final del *Dockerfile*. Esto permite que Docker reutilice las capas en caché siempre que sea posible.
+     - Despliegue del sistema operativo.
+     - Instalación de aplicaciones y lenguajes de programación.
+     - Incorporación de librerias y complementos de los lenguajes de programación.
+   - **Utiliza capas inmutables:** Evita modificar archivos o directorios existentes en las capas anteriores. Esto garantiza que Docker pueda reutilizar las capas en caché y no tenga que volver a construir las capas posteriores.
+
+### 3.5. Parametrización empleando argumentos (ARG)
+ Los argumentos (ARG) en el Dockerfile te permiten pasar valores durante la construcción de la imagen. Puedes utilizar ARG para parametrizar valores como versiones de software, rutas de archivos o cualquier otro valor que pueda cambiar según el entorno. Esto hace que tu Dockerfile sea más flexible y reutilizable.
+
+### 3.6. Multi-stage build
+El **multi-stage build** es una técnica que te permite construir diferentes etapas en un solo *Dockerfile*. Puedes utilizar múltiples etapas para compilar y construir tu aplicación en una etapa y luego copiar solo los archivos necesarios en una etapa posterior. Esto ayuda a reducir el tamaño final de la imagen y a separar las dependencias de desarrollo de las de producción.
+
+
 
 ### Vídeos:
 En los siguientes vídeos se explica como realizar la configuración de una imagen con un Dockerfile:

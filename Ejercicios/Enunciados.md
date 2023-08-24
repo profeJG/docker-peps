@@ -111,10 +111,22 @@ docker run --rm -v "$PWD":/data -w /data maven:3.3-jdk-8 mvn package
   openjdk:8-jre java -jar target/java-webapp-0.0.1.jar
 ```
 - Mediante el comando `docker inspect servidor_web` podemos averiguar la dirección IP del servidor para acceder a su contenido a través de un mavegador web [http://172.17.0.2:8080)](http://172.17.0.2:8080)
-15.  ooo
-16.  ll
-17. oooo
-18. ooo
+15. Utilizando el contenedor Maven dockerizado del la actividad anterior como si fuera una máquina virtual:
+    1.  Ejecuta una shell en el contenedor.
+    2.  Ejecuta los comandos de compilación dentro de la shell cada vez que quieras compilar
+    3.  Ejecuta la aplicación una vez compilada (recuerda *bindear* el puerto 8080 para que sea accesible desde el host).
+  ```bash
+  # Ejecutamos el contenedor desde la máquina host
+  docker run -it -p 8080:8080 -v "$PWD":/data -w /data maven:3.3-jdk-8 /bin/sh
+  
+  # En el interior del contenedor
+  mvn package
+  java -jar target/java-webapp-0.0.1.jar
+  ```
+16. ll
+17. 
+18. oooo
+19. ooo
 
   
 

@@ -84,7 +84,7 @@ echo "PRÁCTICA OK"
 ```
 Crearemos un contenedor con la imagen base **alpine**. Además, al crearlo, dejaremos lista una *shell* para instalar los programas pertinentes. Esto podemos hacerlo con las siguientes ordenes:
 ```bash
-docker run -it --name ejercicio_shell -v .:/root ubuntu /bin/bash
+docker run -it --name ejercicio_shell -v "$PWD":/root ubuntu /bin/bash
 ./crea_diez_carpetas.sh
 ```
 Es posible salir de la *shell* con el comando `exit`, lo cual parará el contenedor.
@@ -96,10 +96,24 @@ La corrección del ejercicio se lanzará desde un terminal del host:
 ```bash
 ./corrige ejercicio_shell
 ```
-14. 
-15.    
-16. oooo
-17. ooo
+14. Compilar una aplicación **Java (maven:3.3-jdk-8)** con un compilador dockerizado:
+  - Emplearemos el ccódigo de ejemplo de la aplicación Java accesible en el directorio  [java-web-app](./java-webapp/).
+  - Situándonos en el directorio **java-web-app** ejecutamos el contenedor **maven**.
+```bash
+cd java-web-app
+docker run --rm -v "$PWD":/data -w /data maven:3.3-jdk-8 mvn package
+```
+  - Una vez compilada la aplicación web podemos comprobar su correcta ejecución mediante el uso de un **servidor web OpenJDK**.
+```bash
+  docker run -it --name servidor_web \
+  -v "$PWD":/root -w /root \
+  openjdk:8 java -jar target/java-webapp-0.0.1.jar`
+```
+- Mediante el comando `docker inspect servidor_web` podemos averiguar la dirección IP del servidor para acceder a su contenido a través de un mavegador web [http://172.17.0.2:8080)](http://172.17.0.2:8080)
+15.  ooo
+16.  ll
+17. oooo
+18. ooo
 
   
 

@@ -53,12 +53,53 @@ docker run -d -p 9000:80 -v "$PWD":/usr/share/nginx/html nginx
   
   # Ejecuta el contenedor para generar el sitio web en la carpeta descargada.
   docker run --rm  -v "$PWD":/src grahamc/jekyll build
-  ```
-      
-1.  ii
-2.  
-3.  oooo
-4.  ooo
+  ``` 
+13. **Ejercicio shell**: Ejecuta un contenedor Docker a partir de una imagen **alpine**. En el interior de dicho contenedor (de nombre **ejercicio_shell**) se debe lanzar un *script bash* (llamado *crea_diez_carpetas.sh*) que debe crear diez directorios en el interior de */root* denominados *carpeta01*, *carpeta02*, ..., y *carpeta10*. El ejercicio se corregirá mediante el siguiente script:
+```bash
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+    echo "Uso: $0 nombre_contenedor"
+    exit 1
+fi
+
+
+for i in {1..10}
+do
+    if [ $i -lt 10 ]
+    then
+        docker exec -it $1 test -d "/root/carpeta0$i"
+    else
+        docker exec -it $1 test -d "/root/carpeta$i" 
+    fi
+
+    if [ $? -ne 0 ]
+    then
+        echo "PRÁCTICA INCORRECTA"
+        echo "ERROR EN PRUEBA $i"
+        exit $i
+    fi
+done
+echo "PRÁCTICA OK"
+```
+Crearemos un contenedor con la imagen base **alpine**. Además, al crearlo, dejaremos lista una *shell* para instalar los programas pertinentes. Esto podemos hacerlo con las siguientes ordenes:
+```bash
+docker run -it --name ejercicio_shell -v .:/root ubuntu /bin/bash
+./crea_diez_carpetas.sh
+```
+Es posible salir de la *shell* con el comando `exit`, lo cual parará el contenedor.
+Para volver a acceder, es posible re-arrancar el contenedor mediante el siguiente comando:
+```bash
+docker start -ai ejercicio_shell
+```
+La corrección del ejercicio se lanzará desde un terminal del host:
+```bash
+./corrige ejercicio_shell
+```
+14. 
+15.    
+16. oooo
+17. ooo
 
   
 

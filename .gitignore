@@ -2,3 +2,6 @@
 *.tmp
 # Excluir directorios
 wordpress/var/
+# Excluir los historiales
+.*_history
+

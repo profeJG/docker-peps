@@ -1,4 +1,4 @@
-package es.gva.edu.peps.tablonanuncios;
+package es.urjc.code.daw.tablonanuncios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

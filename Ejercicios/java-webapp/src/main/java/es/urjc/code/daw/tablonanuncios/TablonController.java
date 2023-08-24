@@ -1,4 +1,4 @@
-package es.gva.edu.peps.tablonanuncios;
+package es.urjc.code.daw.tablonanuncios;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

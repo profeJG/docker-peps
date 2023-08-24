@@ -1,4 +1,4 @@
-package es.urjc.code.daw.tablonanuncios;
+package es.gva.edu.peps.tablonanuncios;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;

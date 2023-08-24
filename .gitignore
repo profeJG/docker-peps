@@ -4,4 +4,5 @@
 wordpress/var/
 # Excluir los historiales
 .*_history
-
+# Excluir target
+target/

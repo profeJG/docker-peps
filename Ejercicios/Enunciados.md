@@ -1,3 +1,4 @@
+![Logotipos Fondos Next Generation](../imagenes/Logotipo_ME_FP_GV_FSE.png)
 # Enunciados de ejercicios Docker
 ## Servicios en red
 1. Ejecutar de forma manual un servidor web estático:**seqvence/static-site**.

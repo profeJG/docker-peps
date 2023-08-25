@@ -44,5 +44,7 @@ RUN apt-get install -y \
 RUN git clone https://github.com/longld/peda.git ~/peda && \
     echo "source ~/peda/peda.py" >> ~/.gdbinit
 
+RUN apt install -y kali-desktop-xfce xrdp dbus-x11 && service xrdp start
+
 EXPOSE 3389
 CMD ["/bin/bash"]

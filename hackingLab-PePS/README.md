@@ -52,5 +52,5 @@ Para conectar con el Escritorio Kali Linux en el cliente RDP introduciremos. **R
 
 ## Referencias
 - [Awesome *Damn Vulnerable Apps*](https://github.com/rarecoil/awesome-dva)
-
+- [Björn Kimminich; Pwning OWASP Juice Shop](https://pwning.owasp-juice.shop/)
 [Subir](#top)

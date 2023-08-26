@@ -1,0 +1,13 @@
+services:
+  kali:
+    build: .
+    container_name: kali-PePS
+    ports:
+    - 3389:3389
+  
+  juiceshop:
+    image: bkimminich/juice-shop
+    container_name: owasp-juiceshop-PePS
+    ports:
+      -3000:3000
+      

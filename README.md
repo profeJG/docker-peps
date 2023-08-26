@@ -29,3 +29,4 @@ Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso d
 - [Docker Intermedio](https://github.com/kdetony/docker-cap2)
 - [McLibre: Ehjercicios Docker](https://www.mclibre.org/consultar/webapps/lecciones/docker-1.html)
 - [Curso “Introducción a Docker” desarrollado para el CPR de Zafra](https://iesgn.github.io/curso_docker_2021/)
+- [Ejercicios de la Universidad de Granada](https://iesgn.github.io/curso_docker_2021/sesion5/ejercicios.html)

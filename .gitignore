@@ -6,3 +6,6 @@ wordpress/var/
 .*_history
 # Excluir target
 target/
+# Excluir carpetas CFT de OWASP Juiceshop
+#my-juiceshop/
+#my-ctf/

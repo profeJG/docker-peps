@@ -78,7 +78,7 @@ docker run -it my-ubuntu-python
 ```
 
 ## Vídeos:
-- [Ejecutar comandos dentro de un contenedor Docker con `docker run`](https://youtu.be/3zxWWRmOdug)`
+- [Ejecutar comandos dentro de un contenedor Docker con `docker run`](https://youtu.be/3zxWWRmOdug)
 
 
 ## Referencias:

@@ -1,14 +1,17 @@
 ![Logotipos Fondos Next Generation](../imagenes/Logotipo_ME_FP_GV_FSE.png)
+<a name="top"></a>
+
 # Introducción a Docker
 
 ## Contenidos:
-1. ¿Qué es Docker?
-2. Ventajas de usar Docker
-2. Características de Docker.
-3. Componentes de Docker.
-4. Caso práctico: Instalando Docker.
-5. Comandos más habituales para la gestión de contenedores.
+1. [¿Qué es Docker?](#tiulo1)
+2. [Ventajas de usar Docker](#titulo2)
+3. [Características de Docker](#titulo3)
+4. [Componentes de Docker](#titulo4)
+5. [Caso práctico: Instalando Docker](#titulo5)
+6. [Comandos más habituales para la gestión de contenedores](#titulo6)
 
+<a name="titulo1"></a>
 ## 1. ¿Qué es Docker?
 **[Docker](https://www.docker.com/)** es un software de código abierto utilizado para desplegar aplicaciones dentro de contenedores virtuales. La contenerización permite que varias aplicaciones funcionen en diferentes entornos complejos. Por ejemplo, Docker permite ejecutar el sistema de gestión de contenidos WordPress en sistemas Windows, Linux y macOS sin ningún problema. 
 
@@ -17,6 +20,7 @@ Docker es una tecnología de organización en contenedores que posibilita la cre
 
 Docker es un proyecto de código abierto para automatizar la implementación de aplicaciones como contenedores portátiles y autosuficientes que se pueden ejecutar en la nube o localmente. Docker es también una empresa que promueve e impulsa esta tecnología, en colaboración con proveedores de la nube, Linux y Windows, incluido Microsoft.
 
+<a name="titulo2"></a>
 ## 2. Ventajas de usar Docker
 Docker proporciona entornos repetibles de desarrollo, construcción, prueba y producción. La estandarización de la infraestructura de servicio en todo el proceso permite que cada miembro del equipo trabaje en un entorno de paridad de producción. 
 
@@ -31,6 +35,7 @@ Las principales características qie nos pueden llevar a escoger Docker frente a
 - Los contenedores son más ligeros y rápidos que las máquinas virtuales porque no necesitan un sistema operativo completo para funcionar.
 
 
+<a name="titulo3"></a>
 ## 3. Características de Docker
 Las principales características clave que ofrece Docker son:
 
@@ -40,6 +45,8 @@ Las principales características clave que ofrece Docker son:
 - **Escalable:** Docker permite escalar fácilmente aplicaciones distribuidas en múltiples contenedores. Puede aumentar o disminuir el número de contenedores según las necesidades de carga de trabajo, lo que facilita la administración de aplicaciones en entornos de alta demanda.
 - **Seguro:** Docker proporciona un entorno seguro para las aplicaciones al aislarlas en contenedores individuales. Cada contenedor tiene su propio sistema de archivos y recursos, lo que evita que las aplicaciones interfieran entre sí. Además, Docker ofrece características de seguridad adicionales, como la autenticación y el control de acceso, para proteger los contenedores y los datos que contienen.
 
+
+<a name="titulo4"></a>
 ## 4. Componentes de Docker
 A continuación, se muestra un diagrama de los componentes principales de Docker.
 ![Componentes principales de Docker](../imagenes/L01_Componentes_Docker.png)
@@ -74,6 +81,7 @@ Algunos ejemplos de registros de Docker son:
 
 Estos son solo algunos ejemplos de registros de Docker populares, pero también es posible configurar y utilizar registros privados para almacenar y compartir imágenes de contenedores personalizadas.
 
+<a name="titulo5"></a>
 ## 5. Caso práctico: Instalando Docker
 Para instalar Docker, sigue estos pasos:
 
@@ -135,6 +143,7 @@ Si ves un mensaje que indica "Hello from Docker!", significa que Docker se ha in
 
 Una vez Docker está instalado en el sistema y estás podemos comenzar a utilizarlo para crear, ejecutar y administrar contenedores.
 
+<a name="titulo6"></a>
 ## 6. Comandos más habituales para la gestión de contenedores
 El comando básico para obtener infromación dellada de los comandos de Docker es `docker --help`.
 
@@ -188,3 +197,4 @@ Cuestiones:
 - [Docker Hub: *Build, Ship and Run, any app anywhere*.](https://hub.docker.com/)
 - [Documentación oficial de Docker para la instalación en Ubuntu.](https://docs.docker.com/engine/install/ubuntu/)
 - [Guía de DigitalOcean para instalar Docker en Ubuntu.](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es)
+[Subir](#top)

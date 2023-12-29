@@ -10,4 +10,4 @@ target/
 #my-juiceshop/
 #my-ctf/
 # Excluir carpeta node_modules de proyectos Node
-*node_modules/*
+node_modules/

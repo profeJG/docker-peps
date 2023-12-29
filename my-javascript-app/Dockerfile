@@ -1,4 +1,5 @@
-FROM node:latest
+ARG VERSION=latest
+FROM node:${VERSION:-latest}
 RUN mkdir -p /usr/src/app/src/public/js /usr/src/app/test
 WORKDIR /usr/src/app
 COPY package*.json ./

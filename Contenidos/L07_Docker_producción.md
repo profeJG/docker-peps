@@ -21,7 +21,7 @@ Para hacer estos cambios, se puede definir un archivo adicional de Compose, por 
 
 Una vez que se tiene un segundo archivo de configuración, se puede usar con la opción -f:
 ```sh
-docker compose -f compose.yml -f production.yml up -d
+docker-compose -f compose.yml -f production.yml up -d
 ```
 ## 2. Entorno de desarrollo Node.js
 ### Preparación del entorno testing con Node.js mediante comandos docker
@@ -73,6 +73,32 @@ Paramos el contenedor que publica el servicio web mediante `docker container sto
 docker run -it --entrypoint bash -p 8080:8080 mi-js-app
 npm test
 exit
+```
+### Despliegue de un entorno de desarrollo Node.js mediante docker-compose
+1. En primer lugar, es necesario crear el fichero `compose-js-app.yml`:
+```yaml
+networks:
+    ds-my-javascript-app-net:
+        driver: bridge
+
+services:
+    app:
+        build: .
+        container_name: ds-my-javascript-app
+        ports:
+            - "8080:8080"
+        networks:
+            - ds-my-javascript-app-net
+
+```
+2. Una vez elaborado el fichero `compose-js-app.yml` lo lanzamos mediante la herramienta `docker-compose`:
+```bash
+docker-compose -f compose-js-app.yml up -d
+```
+
+3. Una vez compuesto el contenedor que contiene el **servidor Node** podemos consultar la aplicación Javascript a través de un navegador web. Para parar el servicio ejecutamos nuevamente `docker-compose`.
+```bash
+docker-compose -f compose-js-app.yml down
 ```
 
 ## Vídeos:

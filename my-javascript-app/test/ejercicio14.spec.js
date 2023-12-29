@@ -9,7 +9,7 @@
  const expect = chai.expect;    // Using Expect style
  const should = chai.should();  // Using Should style
  
- const {calcularMaximo, calcularMinimo,calcularMedia, contarAprobados, contarSuspensos} = require('../js/ejercicio14'); // Para poder referenciar adecuadamente
+ const {calcularMaximo, calcularMinimo,calcularMedia, contarAprobados, contarSuspensos} = require('../src/public/js/ejercicio14'); // Para poder referenciar adecuadamente
 
  describe('Test de pruebas del Ejercicio 14. Arrays - Estadisticas de notas ', () => {
     describe('Caso de prueba 1: calcularMaximo', () => {

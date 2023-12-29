@@ -36,7 +36,7 @@ docker images
 ```
 3. Ejecutamos un contenedor Docker a partir de la imagen de Nodejs descargada.
 ```bash
-docker run -it --entrypoint bash --name jg-my-javascript-app -v ${PWD}/my-javascript-app:/app -w /app node:latest
+docker run -it --entrypoint bash --name jg-my-javascript-app -p 8080:8080 -v ${PWD}/my-javascript-app:/app -w /app node:latest
 ```
 4. Dentro del contenedor `/app#` ejecutamos **mocha** `mpm test`. En caso de que *mocha* no esté instalado lo instalamos previamente `npm install mocha`.
 

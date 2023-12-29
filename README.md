@@ -9,7 +9,7 @@ Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso d
 4. [Despliegue de aplicaciones con `docker-compose`.](Contenidos/L04_docker-compose.md)
 5. [Integración continua.](Contenidos/L05_Integración_Continua.md)
 6. [Gestión gráfica de Docker con Portainer.](Contenidos/L06_Portainer.md)
-7. Docker en producción.
+7. [Docker en producción.](Contenidos/L07_Docker_producción.md)
 
 ## Diapositivas teoría
 - [Curso Defensa del Instituto Militar](https://16khs695mehu6grk1ykq.institutomilitar.com/)

@@ -5,6 +5,7 @@ Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso d
 ## Contenidos:
 1. Docker en producción.
 2. Entorno de desarrollo Node.js
+3. Entorno de desarrollo Node.js:slim (reducido)
 
 ## 1. Docker en producción
 Para utilizar Docker en entornos de producción, se recomienda seguir las mejores prácticas para garantizar la seguridad y la eficiencia del sistema. Docker Compose es una herramienta útil para definir y ejecutar aplicaciones Docker en diferentes entornos, como **CI**, *staging* y **producción**.
@@ -43,8 +44,9 @@ docker run -it --entrypoint bash --name jg-my-javascript-app -p 8080:8080 -v ${P
 
 ### Despliegue de un entorno de desarrollo Node.js mediante Dockerfile
 1. En primer lugar, es necesario crear el fichero *Dockerfile*:
-```bash
-FROM node:latest
+```Dockerfile
+ARG VERSION=latest
+FROM node:${VERSION:-latest}
 RUN mkdir -p /usr/src/app/src/public/js /usr/src/app/test
 WORKDIR /usr/src/app
 COPY package*.json ./
@@ -100,6 +102,30 @@ docker-compose -f compose-js-app.yml up -d
 ```bash
 docker-compose -f compose-js-app.yml down
 ```
+## 3. Entorno de desarrollo Node.js:slim (reducido)
+Cuando se lanzan contenedores en producción suele ser muy útil optimizar el tamaño de las imagenes y contenedores empleados con el objetivo que su tamaño sea lo más reducido posible.
+1. Podemos observar como es posible esto estudiando el contenido del fichero `slim-js-app.yml`.
+```yaml
+networks:
+    ds-slim-javascript-app-net:
+        driver: bridge
+
+services:
+    app:
+        image: mini-js-app
+        container_name: ds-slim-javascript-app
+        ports:
+            - "8080:8080"
+        networks:
+            - ds-slim-javascript-app-net
+
+```
+2. Debemos construir una imagen de tanaño reducido (extremadamente delgada), llamada `mini-js-app` empleando `Dockerfile` con el argumento `$VERSION=slim`.
+```bash
+docker build --build-arg VERSION=slim -t mini-js-app .
+```
+3. Una vez construida la imagen `mini-js-app`, lanzaremos el contenedor `docker-compose -f slim-js-app.yml up -d`.
+4. Finalizada la sesión de trabajo paramos el contenedor `docker-compose -f slim-js-app.yml down`.
 
 ## Vídeos:
 

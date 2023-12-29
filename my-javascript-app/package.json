@@ -1,0 +1,34 @@
+{
+  "name": "solucionejerciciosjavascript",
+  "version": "1.0.0",
+  "description": "Pruebas JavaScript",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/profeJG/SolucionEjerciciosJavaScript.git"
+  },
+  "keywords": [
+    "Mocha",
+    "Chai",
+    "Javascript",
+    "Testing",
+    "Progranacion",
+    "Pruebas"
+  ],
+  "author": "Jose Gaspar Sanchez Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/profeJG/SolucionEjerciciosJavaScript/issues"
+  },
+  "homepage": "https://github.com/profeJG/SolucionEjerciciosJavaScript#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^8.3.2"
+  }
+}

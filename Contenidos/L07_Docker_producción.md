@@ -40,6 +40,10 @@ docker run -it --entrypoint bash --name jg-my-javascript-app -v ${PWD}/my-javasc
 ```
 4. Dentro del contenedor `/app#` ejecutamos **mocha** `mpm test`. En caso de que *mocha* no esté instalado lo instalamos previamente `npm install mocha`.
 
+## Vídeos:
+
+- [Cómo crear nuestra primera pagina web con NodeJS, Express, Docker y Publicarla en Digitalocean.](https://youtu.be/USivUGPSZ9s)
+
 ## Referencias:
 - [Set up a dev enviroment.](https://docs.docker.com/desktop/dev-environments/set-up/)
 - [Use compose in production.](https://docs.docker.com/compose/production/)

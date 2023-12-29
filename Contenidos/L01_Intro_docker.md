@@ -199,4 +199,5 @@ Cuestiones:
 - [Guía de DigitalOcean para instalar Docker en Ubuntu.](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es)
 [Subir](#top)
 
-[<<README](../README.md) [Preparación de contenedores mediante comnados>](L02_Contenedor_comandos.md)
+[<<README](../README.md) 
+<p text-align="right"> [Preparación de contenedores mediante comnados>](L02_Contenedor_comandos.md)</p>

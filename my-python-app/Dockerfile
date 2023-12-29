@@ -1,8 +1,6 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt update && apt install -y \
-python3 \
-pip && apt clean
+RUN apk update && apk add python3 && apk add py3-pip
 
 WORKDIR /app
 COPY . /app/

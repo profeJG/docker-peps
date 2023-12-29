@@ -39,6 +39,7 @@ docker images
 docker run -it --entrypoint bash --name jg-my-javascript-app -p 8080:8080 -v ${PWD}/my-javascript-app:/app -w /app node:latest
 ```
 4. Dentro del contenedor `/app#` ejecutamos **mocha** `mpm test`. En caso de que *mocha* no esté instalado lo instalamos previamente `npm install mocha`.
+5. Lanzamos el servidor **Exrpress** dentro del contenedor **Node**. En el contenedor `/app#` ejecutamos `node src/index.js`, si todo ha ido bien debemos obtener la respuesta *"Servidor escuchando en el puerto 8080"*
 
 ## Vídeos:
 

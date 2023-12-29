@@ -1,6 +1,6 @@
 // Fichero que renderiza la página web del servidor Node
 const express=require('express');
-const app=express
+const app=express();
 const PORT=8080
 app.use(express.static('src/public'));
 

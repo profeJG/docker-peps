@@ -29,6 +29,6 @@
   "homepage": "https://github.com/profeJG/SolucionEjerciciosJavaScript#readme",
   "dependencies": {
     "chai": "^4.3.6",
-    "mocha": "^8.3.2"
+    "mocha": "^8.4.0"
   }
 }

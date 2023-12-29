@@ -3,14 +3,10 @@
 Uso práctico de Docker para el módulo Puesta en Producción Segura del Curso de Especialización en Ciberseguridad.
 
 ## Contenidos:
-1. Introducción a Docker.
-2. Arquitecturas de microservicios.
-3. Construcción de imagenes: `docker build` y  *Dockerfile*.
-4. Desarrollo de contenedores: `docker-compose`.
-5. Integración continua.
-6. Docker en producción.
+1. Docker en producción.
+2. Entorno de desarrollo Node.js
 
-## Docker en producción
+## 1. Docker en producción
 Para utilizar Docker en entornos de producción, se recomienda seguir las mejores prácticas para garantizar la seguridad y la eficiencia del sistema. Docker Compose es una herramienta útil para definir y ejecutar aplicaciones Docker en diferentes entornos, como **CI**, *staging* y **producción**.
 
 Para preparar una aplicación Docker para producción, es necesario realizar algunos cambios en la configuración de la aplicación. Algunos de estos cambios incluyen:
@@ -27,6 +23,22 @@ Una vez que se tiene un segundo archivo de configuración, se puede usar con la 
 ```sh
 docker compose -f compose.yml -f production.yml up -d
 ```
+## 2. Entorno de desarrollo Node.js
+### Preparación del entorno Node.js mediante comandos docker
+En primer lugar, aprenderemos como preparar un entorno de desarrollo Node.js sobre un sistema operativo Linux empleado comandos Docker. Los pasos que debemos seguir son:
+1. Descarga de la imagen del entorno Nodejs.
+```bash
+docker pull node:latest
+```
+2. Comprobamos que la imagen del sistema operativo se ha descargado correctamente.
+```bash
+docker images
+```
+3. Ejecutamos un contenedor Docker a partir de la imagen de Nodejs descargada.
+```bash
+docker run -it --entrypoint bash --name jg-my-javascript-app -v ${PWD}/my-javascript-app:/app -w /app node:latest
+```
+4. Dentro del contenedor `/app#` ejecutamos **mocha** `mpm test`. En caso de que *mocha* no esté instalado lo instalamos previamente `npm install mocha`.
 
 ## Referencias:
 - [Set up a dev enviroment.](https://docs.docker.com/desktop/dev-environments/set-up/)

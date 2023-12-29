@@ -39,7 +39,41 @@ docker images
 docker run -it --entrypoint bash --name jg-my-javascript-app -p 8080:8080 -v ${PWD}/my-javascript-app:/app -w /app node:latest
 ```
 4. Dentro del contenedor `/app#` ejecutamos **mocha** `mpm test`. En caso de que *mocha* no esté instalado lo instalamos previamente `npm install mocha`.
-5. Lanzamos el servidor **Exrpress** dentro del contenedor **Node**. En el contenedor `/app#` ejecutamos `node src/index.js`, si todo ha ido bien debemos obtener la respuesta *"Servidor escuchando en el puerto 8080"*
+5. Lanzamos el servidor **Exrpress** dentro del contenedor **Node**. En el contenedor `/app#` ejecutamos `node src/index.js &`, si todo ha ido bien debemos obtener la respuesta *"Servidor escuchando en el puerto 8080"*
+
+### Despliegue de un entorno de desarrollo Node.js mediante Dockerfile
+1. En primer lugar, es necesario crear el fichero *Dockerfile*:
+```bash
+FROM node:latest
+RUN mkdir -p /usr/src/app/src/public/js /usr/src/app/test
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY src/*.js ./src/
+COPY src/public/*.html ./src/public/
+COPY src/public/js/*.js ./src/public/js/
+# La siguiente línea podría eliminarse en Producción
+COPY test/* ./test/
+EXPOSE 8080
+CMD ["node","src/index.js"]
+```
+2. Una vez elaborado el fichero *Dockerfile* es necesario construírlo:
+```bash
+docker build -t mi-js-app .
+```
+
+3. Después de construída la imñagen el siguiente paso es lanzar el contenedor asociado.
+- Podemos lanzar el servidor web y consultar la aplicación Javascript a través de un navegador web.
+```bash
+docker run -it --name mi-js-app -p 8080:8080 mi-js-app
+```
+Paramos el contenedor que publica el servicio web mediante `docker container stop mi-js-app`.
+- También es posible abrir una consola `bash` y ejecutar las pruebas dentro del contenedor.
+```bash
+docker run -it --entrypoint bash -p 8080:8080 mi-js-app
+npm test
+exit
+```
 
 ## Vídeos:
 

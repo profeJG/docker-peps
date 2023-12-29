@@ -24,7 +24,7 @@ Una vez que se tiene un segundo archivo de configuración, se puede usar con la 
 docker compose -f compose.yml -f production.yml up -d
 ```
 ## 2. Entorno de desarrollo Node.js
-### Preparación del entorno Node.js mediante comandos docker
+### Preparación del entorno testing con Node.js mediante comandos docker
 En primer lugar, aprenderemos como preparar un entorno de desarrollo Node.js sobre un sistema operativo Linux empleado comandos Docker. Los pasos que debemos seguir son:
 1. Descarga de la imagen del entorno Nodejs.
 ```bash

@@ -1,6 +1,7 @@
 ![Logotipos Fondos Next Generation](../imagenes/Logotipo_ME_FP_GV_FSE.png)
 <a name="top"></a>
-
+[<<README](../README.md)
+  
 # Introducción a Docker
 
 ## Contenidos:
@@ -199,5 +200,4 @@ Cuestiones:
 - [Guía de DigitalOcean para instalar Docker en Ubuntu.](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es)
 [Subir](#top)
 
-[<<README](../README.md) 
-<p text-align="right"> [Preparación de contenedores mediante comnados>](L02_Contenedor_comandos.md)</p>
+[Preparación de contenedores mediante comnados >](L02_Contenedor_comandos.md)

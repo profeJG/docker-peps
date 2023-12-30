@@ -30,6 +30,7 @@ El Dockerfile incluye instrucciones como:
 - **FROM**: especifica la imagen base a partir de la cual se construirá la imagen del contenedor.
 - **RUN**: ejecuta comandos en el entorno del contenedor durante el proceso de construcción.
 - **COPY**: copia archivos y directorios desde el contexto de construcción al contenedor.
+- **ADD**: se utiliza para copiar archivos o directorios desde la máquina local (donde está instalado Docker) al contenedor Docker. A diferencia de la instrucción **COPY**, **ADD** tiene algunas características adicionales, como la posibilidad de copiar archivos comprimidos (gzip, bzip2, xz) y la capacidad de copiar archivos desde una URL. Es importante tener en cuenta que el uso de la instrucción **ADD** implica la creación de una nueva capa de imagen, por lo que debes ser cuidadoso al implementar esta opción.
 - **WORKDIR**: establece el directorio de trabajo dentro del contenedor.
 - **VOLUME**: permite definiir un volumen para el almacenamiento de datos de forma persistente.
 - **EXPOSE**: especifica los puertos en los que la aplicación dentro del contenedor escucha conexiones.
@@ -186,11 +187,14 @@ El **multi-stage build** es una técnica que te permite construir diferentes eta
 
 
 
-### Vídeos:
+## Vídeos:
 En los siguientes vídeos se explica como realizar la configuración de una imagen con un Dockerfile:
 - [Docker crear Dockerfile](https://www.youtube.com/watch?v=6xWw-LKhz9s)
 - [Cómo crear nuestras propias imagenes en Docker](https://youtu.be/74nenVi_W0o)
 - [Dockerfile Tutorial - Docker in Practice](https://youtu.be/WmcdMiyqfZs)
+- [Optimizar imágenes de docker / contenedor - Multi stage & Distroless](https://youtu.be/QVcLTxmcJ8s)
+- [Optimizar python en docker - flask y anaconda - Multi stage & Distroless](https://youtu.be/qpTZlq6Q3fg)
+- [Optimizar Node y Nextjs en docker - Multi stage & Distroless](https://youtu.be/DbpIpVFteKA)
 
 ## Flask
 Flask es un framework web ligero y flexible escrito en Python. Es utilizado para construir aplicaciones web rápidas y eficientes. Flask se basa en el concepto de "microframework", lo que significa que proporciona solo las funcionalidades básicas necesarias para construir aplicaciones web, pero es altamente extensible y permite agregar funcionalidades adicionales según sea necesario.
@@ -215,3 +219,5 @@ En resumen, Flask es un framework web minimalista y flexible escrito en Python. 
 - [Flask](https://flask.palletsprojects.com/en/2.3.x/)
 - [Wikipedia: Flask](https://es.wikipedia.org/wiki/Flask)
 - [Documentación de Dockerfile](https://docs.docker.com/engine/reference/builder/)
+- [Curated Dockerfiles examples](https://github.com/pabpereza/curated-dockerfiles-examples)
+- [Diferencia entre ENTRYPOINT y CMD en docker](https://www.juannicolas.eu/entrypoint-y-cmd-en-docker/)

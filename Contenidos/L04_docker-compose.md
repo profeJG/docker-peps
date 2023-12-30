@@ -200,7 +200,8 @@ docker-compose logs
 ```bash
 docker-compose down
 ```
-
+## Videos
+- [Sincroniza y construye contenedores automáticamente en local - compose watch - docker desktop](https://youtu.be/_mRuZts6zTs)
 ## Referencias:
 - [Fernández, A.: Tutorial Docker Compose.](https://anderfernandez.com/blog/tutorial-docker-compose/)
 - [YAML: *YAML Ain't Markup Language*.](yaml.org)

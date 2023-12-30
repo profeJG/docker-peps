@@ -44,7 +44,29 @@ El fichero `package.json` debería tener un contenido similar al siguiente:
 }
 ```
 ## 2. Automatizando la instalación y ejecucion mediante un *Dockerfile*.
+El Dockerfile que contiene las insturcciones para construir la imagen es el siguiente:
+```Dockerfile
+# Descargamos una version del contenedor oficial Node.js
+ARG VERSION=slim
+FROM node:${VERSION:-slim}
 
+# Establecemos el directorio de trabajo 
+WORKDIR /usr/src/web_server/public
+ADD ./ /usr/src/web_server/public/
+EXPOSE 8080
+RUN npm install && npm start
+#RUN npm install
+#CMD [ "npm","start" ]
+```
+La lina `RUN npm install && npm start` puede ser comentada y sustituida por las dos siguientes, dependiendo de como queramos que sea usado este *Dockerfile*.
+Para construir el Dockerfile utilizamos el siguiente comando:
+```bash
+docker build . -t my-http-server
+```
+Ejecutamos el contenedor con:
+```bash
+docker run -it my-http-server bash
+```
 
 ## Referencias:
 - [http-server: a simple static HTTP server.](https://www.npmjs.com/package/http-server)

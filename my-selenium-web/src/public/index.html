@@ -1,35 +1,115 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Hola mundo Nodejs</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap//dist/js/bootstrap.min.js"></script>
+    <script src="./code.js"></script>
+    <style>
+        @import url("./node_modules/bootstrap/dist/css/bootstrap.min.css");
+    </style>
+
 </head>
+
 <body>
-    <h1>Hola mundo my-javascript-app!</h1>
-    <a href="README.md">Leeme</a>
-    <ul>
-        <li><a href="ejercicio0.html">Ejercicio 0</a></li>
-        <li><a href="ejercicio1.html">Ejercicio 1</a></li>
-        <li><a href="ejercicio2.html">Ejercicio 2</a></li>
-        <li><a href="ejercicio3.html">Ejercicio 3</a></li>
-        <li><a href="ejercicio4.html">Ejercicio 4</a></li>
-        <li><a href="ejercicio5.html">Ejercicio 5</a></li>
-        <li><a href="ejercicio6.html">Ejercicio 6</a></li>
-        <li><a href="ejercicio7.html">Ejercicio 7</a></li>
-        <li><a href="ejercicio8.html">Ejercicio 8</a></li>
-        <li><a href="ejercicio9.html">Ejercicio 9</a></li>
-        <li><a href="ejercicio10.html">Ejercicio 10</a></li>
-        <li><a href="ejercicio11.html">Ejercicio 11</a></li>
-        <li><a href="ejercicio12.html">Ejercicio 12</a></li>
-        <li><a href="ejercicio13.html">Ejercicio 13</a></li>
-        <li><a href="ejercicio14.html">Ejercicio 14</a></li>
-        <li><a href="ejercicio14b.html">Ejercicio 14b</a></li>
-        <li><a href="geoApp.html">Geo App</a></li>
-    </ul>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-12  mb-3"> <span class="d-block p-2 bg-primary text-white">Práctica Selenium</span> </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <h5 class="card-header bg-success">Formulario usuario</h5>
+                    <div class="card-body">
+                        <form id="formulario_alta">
+                            <p class="card-text">
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Rol</label>
+                                        <select class="form-control" id="rol" name="rol" required>
+                                            <option></option>
+                                            <option>Administrador</option>
+                                            <option>Editor</option>
+                                            <option>Revisor</option>
+                                            <option>Invitado</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-3 ml-4">
+                                        <input type="checkbox" class="form-check-input " id="activo" name="activo">
+                                        <label for="exampleCheck1" class="form-label">Activo</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            </p>
+                            <button type="submit" class="btn btn-primary float-right mr-3">Insertar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table" id="tabla">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Activo</th>
+                            <th scope="col">Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var servidor;
+        function addItem(event) {
+            //se obtiene los datos del formulario
+            event.preventDefault();
+            const data = new FormData(event.target);
+            object={};
+            data.forEach(function (value, key) {
+                object[key] = value;
+            })
+            servidor.addItem(object);
+        }
+        $(document).ready(function () {
+            //inicializar el servicio que contiene los datos 
+            servidor = new Service();
+            servidor.tabla = document.querySelector("#tabla");
+            console.log(servidor);
+            document.querySelector("#formulario_alta").addEventListener('submit', addItem)
+        })
+
+    </script>
 </body>
+
 </html>

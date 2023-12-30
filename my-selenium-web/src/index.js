@@ -2,7 +2,7 @@
 const express=require('express');
 const app=express();
 const PORT=8080
-app.use(express.static('src/public'));
+app.use(express.static('www/public'));
 
 app.get('/',(req, res) => {
     res.render("index.js");

@@ -4,11 +4,16 @@
 networks:
     ds-my-selenium-app-net:
         driver: bridge
+volumes:
+    app_data:
 
 services:
     app:
         build: .
         container_name: ds-my-selenium-app
+        volumes:
+            - app_data:/usr/src/app
+            #- ./app_data:/usr/src/app
         ports:
             - "8080:8080"
         networks:

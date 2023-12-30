@@ -11,8 +11,7 @@ Ejecutamos un contenedor docker con **Node.js** mediante comandos:
 ```bash
 docker run --entrypoint bash -it -p 8080:8080 \
 -w /usr/src/web_server/public \
--v .:/usr/src/web_server/public \ 
-node:slim
+-v .:/usr/src/web_server/public node:slim
 ```
 Una vez dentro de del contenedor si disponemos de los archivos necesarios (HTML, js) y el `package.json`, tan solo tendremos que ejecutar este sencillo comando para lanzar el servidor:
 ```bash

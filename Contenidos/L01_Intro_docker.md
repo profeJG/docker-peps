@@ -177,6 +177,11 @@ Para gestionar contenedores emplearemos:
   - `update`: Actualizar la configuración de uno o más contenedores.
   - `wait`: Bloquear hasta que uno o más contenedores se detengan.
 
+## Videos
+- [¿Qué es un contenedor Docker?](https://youtu.be/m8TdvyooQ2g?list=PLOV9_oYpKEH47KTEpXwEKkEAxc4ZJ1VGA)
+- [Docker sencillo: Introducción.](https://youtu.be/2MZbEHIw5FE?list=PLrb1e2Mp6N_s898B-37mcbI00aJ5gmwLm)
+- [Docker vs Máquinas Virtuales](https://youtu.be/HysQjh7c3j0?list=PLrb1e2Mp6N_tXQryuDVzOq4SLQKqVv1uz)
+
 ## Ejercicios propuestos:
 1. Explique resumidamente qué es Docker.
 2. ¿Cual es la diferencia entre Docker y una máquina virtual?

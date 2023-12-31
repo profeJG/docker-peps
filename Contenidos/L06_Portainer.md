@@ -46,6 +46,8 @@
    - Docker Portainer ofrece opciones de autenticación y control de acceso para proteger tu entorno de Docker. Puedes configurar usuarios y contraseñas para acceder a la interfaz web y asignar diferentes niveles de acceso y permisos a los usuarios.
    - Además, puedes configurar reglas de firewall y asegurarte de que solo los usuarios autorizados puedan acceder a la interfaz web de Portainer.
 
+## Vídeos:
+- [Docker GUI: Portainer.](https://youtu.be/cD_q5QBdRUI?list=PLrb1e2Mp6N_s898B-37mcbI00aJ5gmwLm)
 ## Referencias:
 - [Gestión gráfica de Docker con Portainer.](https://colaboratorio.net/davidochobits/sysadmin/2018/gestion-grafica-docker-portainer/)
 

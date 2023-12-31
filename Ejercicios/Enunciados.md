@@ -5,7 +5,7 @@
 ```bash
 docker run --name static-site \
  -e AUTHOR="Your Name" -d \
- -p 9000:80 seqvence/static-site
+ -p 9980:80 seqvence/static-site
 ```
 2. Averigue los contenedores que se encuentran en ejecución.
 ```bash
@@ -15,7 +15,7 @@ docker ps
 ```bash
 docker logs static-site
 ```
-4. Abre la URL http://127.0.0.1:9000 en un navegador y accede al puerto 80 de la aplicación en el contenedor.
+4. Abre la URL http://127.0.0.1:9980 en un navegador y accede al puerto 80 de la aplicación en el contenedor.
 5. Parar el contenedor *static-site*.
 ```bash
 docker stop static-site
